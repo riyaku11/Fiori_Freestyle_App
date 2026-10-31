@@ -1,8 +1,35 @@
 <mvc:View controllerName="nwproductsdata.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
     <content>
+	<Text id="id1" text = "Hello"/>
+	<Button text="Go to View 2" press="_toview2"/>
+		<f:SimpleForm id="SimpleFormDisplay354"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Name" />
+				<Text id="nameText" text="{emp>/empname}" />
+				<Label text="Street/No." />
+				<Text text="{Street} {emp>/empcountry}" />
+				
+			</f:content>
+		</f:SimpleForm>
     <Table id="idProductsTable" items="{prod>/}">
 		
 		
@@ -57,7 +84,12 @@
 					<Text text="{prod>SupplierID}" />
 					<Text text="{prod>CategoryID}" />
 					<Text text="{prod>QuantityPerUnit}" />
-					<Text text="{prod>UnitPrice}" />
+					<!-- <Text text="{prod>UnitPrice}" /> -->
+					<ObjectStatus
+							class="sapUiSmallMarginBottom"
+							text="{prod>UnitPrice}"
+							icon="{= ${prod>UnitPrice} > 50 ? 'sap-icon://error' : 'sap-icon://sys-enter-2'}"
+							state="{= ${prod>UnitPrice} > 50 ? 'Error' : 'Success'}" />
 					<Text text="{prod>UnitsInStock}" />
 					<Text text="{prod>UnitsOnOrder}" />
 					<Text text="{prod>ReorderLevel}" />

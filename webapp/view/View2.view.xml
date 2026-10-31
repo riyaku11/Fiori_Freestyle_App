@@ -1,0 +1,9 @@
+<mvc:View controllerName="nwproductsdata.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="page2" title="View2">
+    <content>
+	
+    </content>
+    </Page>
+</mvc:View>
