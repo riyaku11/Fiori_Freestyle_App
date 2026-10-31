@@ -6,6 +6,7 @@ sap.ui.define([
     return Controller.extend("nwproductsdata.controller.View1", {
         onInit() {
           //this is the code to call the Northwind Odata Service  
+          //why i kant see the code in the repo??
           var oModel = this.getOwnerComponent().getModel();
           oModel.read('/Products', {
             success : (odata) => {
